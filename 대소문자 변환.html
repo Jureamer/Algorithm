@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){  
+                let answer="";
+                let upperAscii = [65, 90];
+
+                for(let i = 0; i < s.length; i++) {
+                  ascii = s.charCodeAt(i);
+                  if(ascii >= upperAscii[0] && ascii <= upperAscii[1]) {
+                    answer = answer + String.fromCharCode(ascii+32);
+                  } else {
+                    answer = answer + String.fromCharCode(ascii-32);
+                  }
+                }
+                
+                return answer;
+            }
+
+            console.log(solution("StuDY"));
+        </script>
+    </body>
+</html>
