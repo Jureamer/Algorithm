@@ -10,7 +10,7 @@
 function solution(citations) {
   var answer = 0;
   // H-Index 변수
-  // 오름차순 정렬
+  // 내림차순 정렬
   citations = citations.sort((a, b) => b-a);
   
   for(let i = 0; i < citations.length; i++) {
