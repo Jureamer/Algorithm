@@ -18,4 +18,4 @@ function solution(n) {
 console.log(solution(12));
 
 // test case 2 ==> 6
-console.log(solution(5))));
+console.log(solution(5));
