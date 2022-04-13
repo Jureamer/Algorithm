@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){         
+                let answer=0;
+
+                const userUpperCase = (str) => {
+                  let answer = 0;
+                  let lowerStr = str.toLowerCase(0)
+                  for(let i = 0; i < str.length; i++) {
+                    if(lowerStr[i] !== str[i]) {
+                      answer++
+                    }
+                  }
+                  return answer                  
+                }
+                
+
+                const useAsciiCode = (str) => { // ASCII CODE => 영어 대문자: 65 ~ 90까지, 영어 소문자: 97 ~ 122까지
+                  let answer = 0;
+                  for(let i = 0; i < str.length; i++) {
+                    const asciiNum = str.charCodeAt(i);
+                    if(asciiNum >= 65 && asciiNum <= 90 ) {
+                      answer++
+                    }
+                  }
+                  return answer                  
+                }
+
+                return useAsciiCode(s);
+                // return useUpperCase(s);
+            }
+
+            let str="KoreaTimeGood";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>

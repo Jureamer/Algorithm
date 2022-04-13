@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(s) {
+        let answer = "YES";
+        s = s.match(/[a-z]/gi).join("").toLowerCase();
+        let length = s.length;
+        for (let i = 0; i < Math.floor(length / 2); i++) {
+          let left = s[i];
+          let right = s[length - i - 1];
+          console.log("left = ", left, "right = ", right);
+          if (!(left === right)) {
+            answer = "NO";
+            return answer;
+          }
+        }
+        return answer;
+      }
+
+      let str = "found7, time: study; Yduts; emit, 7Dnuof";
+      console.log(solution(str));
+    </script>
+  </body>
+</html>

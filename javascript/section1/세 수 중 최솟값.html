@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(a, b, c) {
+        const useMathMinConst = (arr) => {
+          console.log("useMathMinConst 실행, arr = ", arr);
+          return Math.min(...arr);
+        };
+
+        const useIfConst = (arr) => {
+          console.log("useIfConst 실행, arr = ", arr);
+          let minNum = arr.reduce((acc, cur) => {
+            return acc < cur ? acc : cur;
+          });
+          return minNum;
+        };
+        return useMathMinConst([a, b, c]);
+      }
+
+      console.log(solution(2, 5, 1));
+    </script>
+  </body>
+</html>
