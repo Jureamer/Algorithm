@@ -21,18 +21,41 @@ for i in range(N):
     print(heapq.heappop(heap)[1] if heap else 0) 
 
 
+
+
+
+
+
+
 # min_heap, max_heap 사용 ver
 import heapq
 import sys
 
 input = sys.stdin.readline
-heap = []
+min_heap = [] # 양수 저장
+max_heap = [] # 음수 저장
 
 N = int(input())
 
 for i in range(N):
   inform = int(input())
-  if inform != 0:
-    heapq.heappush(heap, (abs(inform), inform))
+  if inform: 
+    if inform > 0:
+        heapq.heappush(min_heap, inform)
+    else:
+      heapq.heappush(max_heap, inform)
   else:
-    print(heapq.heappop(heap)[1] if heap else 0) 
+    if min_heap:
+      if max_heap: 
+        if min_heap[0] < abs(max_heap[0]): 
+          print(heapq.heappop(min_heap))
+        else: 
+          print(heapq.heappop(max_heap))
+      else: 
+          print(heapq.heappop(min_heap))
+    else: 
+        if max_heap:
+          print(heapq.heappop(max_heap))
+        else:
+          print(0)
+    
